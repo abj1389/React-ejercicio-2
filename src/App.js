@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import Titles from "./components/Tittles/Tittles";
+import ListPhones from "./components/ListPhones/ListPhones";
+import Message from "./components/Message/Message";
+import CustomButton from "./components/CustomButon/CustomButton";
 
-function App() {
+function App(){
+  const okAlert = () => {
+    alert("Pues ok tio...");
+  }
+
+  const daleAlert = () => {
+    alert("Le has dado");
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Titles name="Teléfonos"></Titles>
+      <ListPhones></ListPhones>
+      <Titles name="Mensajes"></Titles>
+      <Message name="Laura"></Message>
+      <Message name="Edu"></Message>
+      <Titles name="Botones"></Titles>
+      <CustomButton handleClick={daleAlert} name="Dale!"></CustomButton>
+      <CustomButton handleClick={okAlert} name="Ok"></CustomButton>
     </div>
   );
 }
